@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>load</title>
+	<style type="text/css">
+		
+		.centered {
+		  position: fixed; /* or absolute */
+		  top: 50%;
+		  left: 50%;
+		  transform: translate(-50%, -50%);
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		function fn() {
+			console.log("click button")
+			var load = document.getElementById("load");
+			load.setAttribute("style", "display: inline;");
+			setTimeout(fn2, 3000);
+		}
+
+		function fn2() {
+			var load = document.getElementById("load");
+			load.setAttribute("style", "display: none;");
+		}
+	</script>
+</head>
+<body style="padding: 0; margin: 0;">
+	<button id="button" onclick="fn()">Load</button>
+	<div id="load" class="centered" style="display: none;">
+		<img src="loading.gif" style="width:50px;" />
+	</div>
+</body>
+</html>
